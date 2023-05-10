@@ -1,0 +1,28 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Questionnaire titles">
+
+        <EditTextPreference
+            app:key="column1"
+            app:title="Column 1"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="column2"
+            app:title="Column 2"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="row1"
+            app:title="Row 1"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="row2"
+            app:title="Row 2"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

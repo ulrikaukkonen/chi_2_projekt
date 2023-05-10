@@ -2,28 +2,60 @@ package fi.arcada.projekt_chi2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView outputText;
+    EditText inputText;
+
+    SharedPreferences sharedPref;
+    SharedPreferences.Editor prefEditor;
+
 
     // Deklarera 4 Button-objekt
     Button btn1, btn2, btn3, btn4;
     // Deklarera 4 heltalsvariabler för knapparnas värden
     int val1, val2, val3, val4;
 
+    TextView column1, column2, row1, row2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        prefEditor = sharedPref.edit();
+
+
+        column1 = findViewById(R.id.textViewCol1);
+        column2 = findViewById(R.id.textViewCol2);
+        row1 = findViewById(R.id.textViewRow1);
+        row2 = findViewById(R.id.textViewRow2);
+
+        String column1Title = inputText.getText().toString();
+        prefEditor.putString("column1Title", column1Title);
+        prefEditor.apply();
+
+        column1.setText(String.format(column1Title));
+
 
         // Koppla samman Button-objekten med knapparna i layouten
         btn1 = findViewById(R.id.button1);
         btn2 = findViewById(R.id.button2);
         btn3 = findViewById(R.id.button3);
         btn4 = findViewById(R.id.button4);
+
 
 
     }
@@ -75,6 +107,12 @@ public class MainActivity extends AppCompatActivity {
          *    med signifikansnivån, visa reultatet åt användaren
          *
          */
+
+    }
+
+    public void openSettings(View view) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
 
     }
 
