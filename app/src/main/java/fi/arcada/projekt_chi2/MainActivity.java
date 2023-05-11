@@ -43,11 +43,23 @@ public class MainActivity extends AppCompatActivity {
         row1 = findViewById(R.id.textViewRow1);
         row2 = findViewById(R.id.textViewRow2);
 
-        String column1Title = inputText.getText().toString();
+        String column1Title = sharedPref.getString("column1", "Column 1");
+        column1.setText(column1Title);
+
+        String column2Title = sharedPref.getString("column2", "Column 2");
+        column2.setText(column2Title);
+
+        String row1Title = sharedPref.getString("row1", "Row 1");
+        row1.setText(row1Title);
+
+        String row2Title = sharedPref.getString("row2", "Row 2");
+        row2.setText(row2Title);
+
+        /*String column1Title = inputText.getText().toString();
         prefEditor.putString("column1Title", column1Title);
         prefEditor.apply();
 
-        column1.setText(String.format(column1Title));
+        column1.setText(String.format("%s", column1Title));*/
 
 
         // Koppla samman Button-objekten med knapparna i layouten
@@ -104,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
          *    T.ex. (val1 / (val1+val3) * 100) och (val2 / (val2+val4) * 100
          *
          *  - Analysera signifikansen genom att jämföra p-värdet
-         *    med signifikansnivån, visa reultatet åt användaren
+         *    med signifikansnivån, visa resultatet åt användaren
          *
          */
 

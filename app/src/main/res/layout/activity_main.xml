@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -90,6 +91,34 @@
                 android:text="0" />
         </TableRow>
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Row 1" />
+
+            <TextView
+                android:id="@+id/column1Perc"
+                android:layout_width="match_parent"
+                android:layout_column="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="4dp"
+                android:text="%" />
+
+            <TextView
+                android:id="@+id/column2Perc"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="4dp"
+                android:text="%" />
+
+        </TableRow>
+
     </TableLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -103,5 +132,29 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_menu_preferences" />
+
+    <TextView
+        android:id="@+id/calcResult"
+        android:layout_width="205dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="56dp"
+        android:text="calcResult"
+        app:layout_constraintBottom_toTopOf="@+id/calcDesc"
+        app:layout_constraintEnd_toEndOf="@+id/tableLayout"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    <TextView
+        android:id="@+id/calcDesc"
+        android:layout_width="208dp"
+        android:layout_height="101dp"
+        android:layout_marginBottom="140dp"
+        android:text="calcDesc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/calcResult"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/calcResult" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
